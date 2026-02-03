@@ -235,7 +235,53 @@
             orderCompleted=true;
         });
     </script>
+
+    // -------- VIEW CONTENT ----------
+document.querySelectorAll(".view-product-btn").forEach(btn => {
+  btn.addEventListener('click', () => {
+    fbq('track', 'ViewContent');
+  });
+});
+
+// -------- ADD TO CART ----------
+document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+  btn.addEventListener('click', () => {
+    fbq('track', 'AddToCart', {
+      content_name: btn.dataset.productName,
+      value: btn.dataset.productPrice,
+      currency: 'USD'
+    });
+  });
+});
+
+// -------- INITIATE CHECKOUT ----------
+document.getElementById('checkout-btn')?.addEventListener('click', () => {
+  fbq('track', 'InitiateCheckout');
+});
+
+// -------- ADD PAYMENT INFO ----------
+document.getElementById('proceed-btn')?.addEventListener('click', () => {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  fbq('track', 'AddPaymentInfo', {
+    content_name: name,
+    content_email: email,
+    value: cartTotal,
+    currency: 'USD'
+  });
+});
+
+// -------- PURCHASE ----------
+document.getElementById('complete-btn')?.addEventListener('click', () => {
+  fbq('track', 'Purchase', {
+    value: cartTotal,
+    currency: 'USD'
+  });
+});
+
+    
 </body>
 </html>
+
 
 

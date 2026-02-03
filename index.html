@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGadgets | Dummy Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles for modal, cart sidebar and animations */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            z-index: 50;
+        }
+        
+        .cart-sidebar {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .cart-sidebar.open {
+            transform: translateX(0);
+        }
+        
+        .success-message {
+            animation: fadeInOut 3s forwards;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-10px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+        
+        .checkout-form input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg"></div>
+                <h1 class="text-2xl font-bold text-gray-800">TechGadgets</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Products</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button id="cartButton" class="relative p-2 text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+                <button class="md:hidden text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to TechGadgets</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Your one-stop shop for the latest tech gadgets and accessories</p>
+            <a href="#products" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 inline-block">Explore Products</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Products</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1 -->
+            <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="h-48 bg-gradient-to-r from-blue-100 to-indigo-200 flex items-center justify-center">
+                    <i class="fas fa-laptop text-6xl text-blue-600"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">UltraBook Pro</h3>
+                    <p class="text-gray-600 mb-4">Lightweight laptop with 16GB RAM and 512GB SSD</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-blue-600">$1,299</span>
+                        <button class="view-product-btn bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700" data-product="UltraBook Pro" data-price="1299">View Product</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="h-48 bg-gradient-to-r from-green-100 to-teal-200 flex items-center justify-center">
+                    <i class="fas fa-mobile-alt text-6xl text-green-600"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">SmartPhone X</h3>
+                    <p class="text-gray-600 mb-4">Latest smartphone with 5G and pro camera</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$899</span>
+                        <button class="view-product-btn bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700" data-product="SmartPhone X" data-price="899">View Product</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="h-48 bg-gradient-to-r from-purple-100 to-pink-200 flex items-center justify-center">
+                    <i class="fas fa-headphones text-6xl text-purple-600"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Noise-Cancelling Headphones</h3>
+                    <p class="text-gray-600 mb-4">Premium sound quality with 30h battery life</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-purple-600">$249</span>
+                        <button class="view-product-btn bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700" data-product="Noise-Cancelling Headphones" data-price="249">View Product</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="h-48 bg-gradient-to-r from-yellow-100 to-orange-200 flex items-center justify-center">
+                    <i class="fas fa-smartwatch text-6xl text-orange-600"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Smart Watch Pro</h3>
+                    <p class="text-gray-600 mb-4">Fitness tracking with health monitoring features</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-orange-600">$329</span>
+                        <button class="view-product-btn bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700" data-product="Smart Watch Pro" data-price="329">View Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Your Shopping Cart</h3>
+                <button id="closeCartButton" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div id="cartItems" class="mb-6">
+                <!-- Cart items will be dynamically added here -->
+                <p id="emptyCartMessage" class="text-gray-500 text-center py-8">Your cart is empty</p>
+            </div>
+            
+            <div class="border-t pt-4">
+                <div class="flex justify-between text-lg font-bold mb-6">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                <button id="checkoutButton" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 mb-4">Proceed to Checkout</button>
+                <button id="continueShopping" class="w-full bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-lg hover:bg-gray-300">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Overlay -->
+    <div id="cartOverlay" class="modal-overlay"></div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal-overlay">
+        <div class="flex items-center justify-center h-full">
+            <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 id="modalProductTitle" class="text-2xl font-bold text-gray-800">Product Name</h3>
+                        <button id="closeModalButton" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="modalProductImage" class="h-48 bg-gradient-to-r from-blue-100 to-indigo-200 rounded-lg mb-6 flex items-center justify-center">
+                        <!-- Product image will be dynamically added here -->
+                    </div>
+                    
+                    <p id="modalProductDescription" class="text-gray-600 mb-6">Product description will appear here.</p>
+                    
+                    <div class="flex justify-between items-center mb-6">
+                        <span id="modalProductPrice" class="text-3xl font-bold text-blue-600">$0</span>
+                        <span class="text-gray-500">In stock</span>
+                    </div>
+                    
+                    <button id="addToCartButton" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 mb-4">Add to Cart</button>
+                    <button id="closeModalButton2" class="w-full bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-lg hover:bg-gray-300">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Form -->
+    <div id="checkoutForm" class="modal-overlay">
+        <div class="flex items-center justify-center h-full p-4">
+            <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full overflow-hidden">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Checkout</h3>
+                        <button id="closeCheckoutButton" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <form id="checkoutFormFields" class="checkout-form space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Full Name</label>
+                            <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="John Doe">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="john@example.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2">Credit Card Number</label>
+                            <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Expiry Date</label>
+                                <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="MM/YY">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">CVV</label>
+                                <input type="text" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="border-t pt-4 mt-6">
+                            <div class="flex justify-between text-lg font-bold mb-6">
+                                <span>Total to Pay:</span>
+                                <span id="checkoutTotal">$0</span>
+                            </div>
+                            <button type="submit" id="placeOrderButton" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">Place Order</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Container -->
+    <div id="successMessage" class="fixed top-4 right-4 z-50 max-w-sm hidden">
+        <div class="success-message bg-green-500 text-white p-4 rounded-lg shadow-lg">
+            <div class="flex items-center">
+                <i class="fas fa-check-circle text-xl mr-3"></i>
+                <div>
+                    <p class="font-bold">Success!</p>
+                    <p id="successText">Product added to cart successfully!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Message -->
+    <div id="thankYouMessage" class="modal-overlay">
+        <div class="flex items-center justify-center h-full">
+            <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 overflow-hidden text-center p-8">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-3xl text-green-600"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Thank You!</h3>
+                <p class="text-gray-600 mb-6">Your order has been placed successfully. You will receive a confirmation email shortly.</p>
+                <button id="closeThankYouButton" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-bold mb-2">TechGadgets</p>
+            <p class="text-gray-400 mb-4">Your trusted source for tech products</p>
+            <p class="text-gray-500 text-sm">© 2023 TechGadgets. This is a dummy shop for demonstration purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        // State Management
+        let cart = [];
+        let currentProduct = null;
+        
+        // DOM Elements
+        const cartButton = document.getElementById('cartButton');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCartButton = document.getElementById('closeCartButton');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const continueShopping = document.getElementById('continueShopping');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const emptyCartMessage = document.getElementById('emptyCartMessage');
+        
+        const viewProductButtons = document.querySelectorAll('.view-product-btn');
+        const productModal = document.getElementById('productModal');
+        const closeModalButton = document.getElementById('closeModalButton');
+        const closeModalButton2 = document.getElementById('closeModalButton2');
+        const modalProductTitle = document.getElementById('modalProductTitle');
+        const modalProductImage = document.getElementById('modalProductImage');
+        const modalProductDescription = document.getElementById('modalProductDescription');
+        const modalProductPrice = document.getElementById('modalProductPrice');
+        const addToCartButton = document.getElementById('addToCartButton');
+        
+        const checkoutButton = document.getElementById('checkoutButton');
+        const checkoutForm = document.getElementById('checkoutForm');
+        const closeCheckoutButton = document.getElementById('closeCheckoutButton');
+        const checkoutFormFields = document.getElementById('checkoutFormFields');
+        const checkoutTotal = document.getElementById('checkoutTotal');
+        const placeOrderButton = document.getElementById('placeOrderButton');
+        
+        const successMessage = document.getElementById('successMessage');
+        const successText = document.getElementById('successText');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        const closeThankYouButton = document.getElementById('closeThankYouButton');
+        
+        // Product data for modal display
+        const productData = {
+            "UltraBook Pro": {
+                description: "Lightweight laptop with 16GB RAM, 512GB SSD, and 14-inch retina display. Perfect for professionals and students.",
+                color: "from-blue-100 to-indigo-200",
+                icon: "fas fa-laptop",
+                iconColor: "text-blue-600"
+            },
+            "SmartPhone X": {
+                description: "Latest smartphone with 5G connectivity, professional-grade camera system, and all-day battery life.",
+                color: "from-green-100 to-teal-200",
+                icon: "fas fa-mobile-alt",
+                iconColor: "text-green-600"
+            },
+            "Noise-Cancelling Headphones": {
+                description: "Premium over-ear headphones with active noise cancellation and 30-hour battery life.",
+                color: "from-purple-100 to-pink-200",
+                icon: "fas fa-headphones",
+                iconColor: "text-purple-600"
+            },
+            "Smart Watch Pro": {
+                description: "Advanced smartwatch with fitness tracking, heart rate monitoring, and GPS functionality.",
+                color: "from-yellow-100 to-orange-200",
+                icon: "fas fa-smartwatch",
+                iconColor: "text-orange-600"
+            }
+        };
+        
+        // Event Listeners
+        cartButton.addEventListener('click', openCart);
+        closeCartButton.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+        continueShopping.addEventListener('click', closeCart);
+        
+        checkoutButton.addEventListener('click', openCheckout);
+        closeCheckoutButton.addEventListener('click', closeCheckout);
+        
+        closeModalButton.addEventListener('click', closeModal);
+        closeModalButton2.addEventListener('click', closeModal);
+        
+        checkoutFormFields.addEventListener('submit', placeOrder);
+        closeThankYouButton.addEventListener('click', closeThankYou);
+        
+        // Add event listeners to all "View Product" buttons
+        viewProductButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                const productPrice = this.getAttribute('data-price');
+                openModal(productName, productPrice);
+            });
+        });
+        
+        // Add to cart event listener
+        addToCartButton.addEventListener('click', function() {
+            if (currentProduct) {
+                addToCart(currentProduct.name, currentProduct.price);
+            }
+        });
+        
+        // Functions
+        function openModal(productName, productPrice) {
+            console.log("Event: ViewContent - Product: " + productName);
+            
+            currentProduct = {
+                name: productName,
+                price: parseInt(productPrice)
+            };
+            
+            // Set modal content based on product
+            modalProductTitle.textContent = productName;
+            modalProductPrice.textContent = `$${productPrice}`;
+            
+            const productInfo = productData[productName];
+            if (productInfo) {
+                modalProductDescription.textContent = productInfo.description;
+                modalProductImage.className = `h-48 ${productInfo.color} rounded-lg mb-6 flex items-center justify-center`;
+                modalProductImage.innerHTML = `<i class="${productInfo.icon} ${productInfo.iconColor} text-6xl"></i>`;
+            }
+            
+            productModal.style.display = 'block';
+        }
+        
+        function closeModal() {
+            productModal.style.display = 'none';
+        }
+        
+        function openCart() {
+            cartSidebar.classList.add('open');
+            cartOverlay.style.display = 'block';
+            updateCartDisplay();
+        }
+        
+        function closeCart() {
+            cartSidebar.classList.remove('open');
+            cartOverlay.style.display = 'none';
+        }
+        
+        function addToCart(productName, productPrice) {
+            console.log("Event: AddToCart - Product: " + productName);
+            
+            // Check if product already exists in cart
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                });
+            }
+            
+            updateCartDisplay();
+            closeModal();
+            
+            // Show success message
+            successText.textContent = `${productName} added to cart!`;
+            successMessage.classList.remove('hidden');
+            
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 3000);
+        }
+        
+        function updateCartDisplay() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart total
+            const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            cartTotal.textContent = `$${totalPrice}`;
+            checkoutTotal.textContent = `$${totalPrice}`;
+            
+            // Clear current cart items display
+            cartItems.innerHTML = '';
+            
+            // Show empty message if cart is empty
+            if (cart.length === 0) {
+                cartItems.appendChild(emptyCartMessage);
+                emptyCartMessage.classList.remove('hidden');
+                checkoutButton.disabled = true;
+                checkoutButton.classList.add('opacity-50', 'cursor-not-allowed');
+                return;
+            } else {
+                emptyCartMessage.classList.add('hidden');
+                checkoutButton.disabled = false;
+                checkoutButton.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+            
+            // Add each cart item to display
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'flex justify-between items-center border-b py-4';
+                cartItem.innerHTML = `
+                    <div>
+                        <p class="font-medium text-gray-800">${item.name}</p>
+                        <p class="text-gray-600">$${item.price} x ${item.quantity}</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="font-bold text-gray-800 mr-4">$${item.price * item.quantity}</span>
+                        <button class="remove-item text-red-500 hover:text-red-700" data-index="${index}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    cart.splice(index, 1);
+                    updateCartDisplay();
+                });
+            });
+        }
+        
+        function openCheckout() {
+            console.log("Event: InitiateCheckout");
+            closeCart();
+            checkoutForm.style.display = 'block';
+        }
+        
+        function closeCheckout() {
+            checkoutForm.style.display = 'none';
+        }
+        
+        function placeOrder(e) {
+            e.preventDefault();
+            console.log("Event: Purchase - Amount: $" + cartTotal.textContent.substring(1));
+            
+            // Clear the cart
+            cart = [];
+            updateCartDisplay();
+            
+            // Close checkout form and show thank you message
+            closeCheckout();
+            thankYouMessage.style.display = 'block';
+            
+            // Reset the form
+            checkoutFormFields.reset();
+        }
+        
+        function closeThankYou() {
+            thankYouMessage.style.display = 'none';
+        }
+        
+        // Initialize cart display
+        updateCartDisplay();
+    </script>
+</body>
+</html>

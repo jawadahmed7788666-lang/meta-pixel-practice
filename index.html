@@ -3,283 +3,65 @@
 <head>
 
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1455030376180629');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1455030376180629&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1455030376180629'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1455030376180629&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaperCraft Stationery - Quality Office Supplies</title>
     <style>
-        /* Minimal CSS for a clean, readable design */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #4a6fa5;
-            margin-bottom: 30px;
-        }
-        
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        
-        .tagline {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-        }
-        
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .main-content {
-            flex: 3;
-            min-width: 300px;
-        }
-        
-        .sidebar {
-            flex: 1;
-            min-width: 250px;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        section {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        h2 {
-            color: #2c3e50;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .product-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            transition: transform 0.2s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-        }
-        
-        .product-name {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        
-        .product-description {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            height: 60px;
-            overflow: hidden;
-        }
-        
-        .product-price {
-            color: #27ae60;
-            font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-        
-        button {
-            background-color: #4a6fa5;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.2s;
-            margin: 5px;
-        }
-        
-        button:hover {
-            background-color: #3a5a80;
-        }
-        
-        button.secondary {
-            background-color: #7f8c8d;
-        }
-        
-        button.secondary:hover {
-            background-color: #6c7b7d;
-        }
-        
-        button.success {
-            background-color: #27ae60;
-        }
-        
-        button.success:hover {
-            background-color: #219653;
-        }
-        
-        button:disabled {
-            background-color: #bdc3c7;
-            cursor: not-allowed;
-        }
-        
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .cart-total {
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-align: right;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 2px solid #4a6fa5;
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        
-        input[type="text"], input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        .confirmation {
-            background-color: #d5edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .step-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .step-indicator:before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: #ddd;
-            z-index: 1;
-        }
-        
-        .step {
-            background-color: #fff;
-            border: 2px solid #ddd;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .step.active {
-            border-color: #4a6fa5;
-            background-color: #4a6fa5;
-            color: white;
-        }
-        
-        .step.completed {
-            border-color: #27ae60;
-            background-color: #27ae60;
-            color: white;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-        
-        .interactive-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 30px;
-        }
+        /* Minimal CSS for clean design */
+        * { box-sizing: border-box; margin:0; padding:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color:#f8f9fa; color:#333; line-height:1.6; max-width:1200px; margin:0 auto; padding:20px; }
+        header { text-align:center; padding:20px 0; border-bottom:2px solid #4a6fa5; margin-bottom:30px; }
+        h1 { color:#2c3e50; margin-bottom:10px; }
+        .tagline { color:#7f8c8d; font-size:1.1rem; }
+        .container { display:flex; flex-wrap:wrap; gap:30px; }
+        .main-content { flex:3; min-width:300px; }
+        .sidebar { flex:1; min-width:250px; background-color:#fff; border-radius:8px; padding:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+        section { background-color:#fff; border-radius:8px; padding:20px; margin-bottom:25px; box-shadow:0 4px 6px rgba(0,0,0,0.05); }
+        h2 { color:#2c3e50; border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px; }
+        .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; margin-top:20px; }
+        .product-card { border:1px solid #e0e0e0; border-radius:8px; padding:15px; transition: transform 0.2s; }
+        .product-card:hover { transform:translateY(-5px); box-shadow:0 6px 12px rgba(0,0,0,0.08); }
+        .product-name { font-weight:bold; font-size:1.2rem; color:#2c3e50; margin-bottom:8px; }
+        .product-description { color:#555; font-size:0.95rem; margin-bottom:12px; height:60px; overflow:hidden; }
+        .product-price { color:#27ae60; font-weight:bold; font-size:1.3rem; margin-bottom:15px; }
+        button { background-color:#4a6fa5; color:white; border:none; padding:10px 15px; border-radius:4px; cursor:pointer; font-size:1rem; transition: background-color 0.2s; margin:5px; }
+        button:hover { background-color:#3a5a80; }
+        button.secondary { background-color:#7f8c8d; }
+        button.secondary:hover { background-color:#6c7b7d; }
+        button.success { background-color:#27ae60; }
+        button.success:hover { background-color:#219653; }
+        button:disabled { background-color:#bdc3c7; cursor:not-allowed; }
+        .cart-item { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #eee; }
+        .cart-total { font-weight:bold; font-size:1.2rem; text-align:right; margin-top:15px; padding-top:15px; border-top:2px solid #4a6fa5; }
+        .form-group { margin-bottom:15px; }
+        label { display:block; margin-bottom:5px; font-weight:600; }
+        input[type="text"], input[type="email"] { width:100%; padding:10px; border:1px solid #ddd; border-radius:4px; font-size:1rem; }
+        .hidden { display:none; }
+        .confirmation { background-color:#d5edda; border:1px solid #c3e6cb; border-radius:8px; padding:25px; text-align:center; margin-top:20px; }
+        .step-indicator { display:flex; justify-content:space-between; margin:30px 0; position:relative; }
+        .step-indicator:before { content:''; position:absolute; top:15px; left:0; right:0; height:2px; background-color:#ddd; z-index:1; }
+        .step { background-color:#fff; border:2px solid #ddd; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; font-weight:bold; position:relative; z-index:2; }
+        .step.active { border-color:#4a6fa5; background-color:#4a6fa5; color:white; }
+        .step.completed { border-color:#27ae60; background-color:#27ae60; color:white; }
+        footer { text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid #eee; color:#7f8c8d; font-size:0.9rem; }
+        .interactive-buttons { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:30px; }
     </style>
 </head>
 <body>
@@ -309,8 +91,8 @@ src="https://www.facebook.com/tr?id=1455030376180629&ev=PageView&noscript=1"
                         <div class="product-name">Executive Fountain Pen</div>
                         <div class="product-description">Smooth writing experience with premium ink flow and ergonomic design for long writing sessions.</div>
                         <div class="product-price">$49.99</div>
-                        <button onclick="viewDetails('product1')">View Details</button>
-                        <button onclick="addToCart('Executive Fountain Pen', 49.99)" class="success">Add to Cart</button>
+                        <button id="viewDetails-product1" onclick="viewDetails('product1')">View Details</button>
+                        <button id="addToCart-product1" onclick="addToCart('Executive Fountain Pen', 49.99)" class="success">Add to Cart</button>
                     </div>
                     
                     <!-- Product 2 -->
@@ -318,8 +100,8 @@ src="https://www.facebook.com/tr?id=1455030376180629&ev=PageView&noscript=1"
                         <div class="product-name">Leather-Bound Journal</div>
                         <div class="product-description">Handcrafted journal with premium paper, perfect for notes, sketches, or personal reflections.</div>
                         <div class="product-price">$34.99</div>
-                        <button onclick="viewDetails('product2')">View Details</button>
-                        <button onclick="addToCart('Leather-Bound Journal', 34.99)" class="success">Add to Cart</button>
+                        <button id="viewDetails-product2" onclick="viewDetails('product2')">View Details</button>
+                        <button id="addToCart-product2" onclick="addToCart('Leather-Bound Journal', 34.99)" class="success">Add to Cart</button>
                     </div>
                     
                     <!-- Product 3 -->
@@ -327,8 +109,8 @@ src="https://www.facebook.com/tr?id=1455030376180629&ev=PageView&noscript=1"
                         <div class="product-name">Desk Organizer Set</div>
                         <div class="product-description">Keep your workspace tidy with this elegant bamboo organizer for pens, clips, and tools.</div>
                         <div class="product-price">$29.99</div>
-                        <button onclick="viewDetails('product3')">View Details</button>
-                        <button onclick="addToCart('Desk Organizer Set', 29.99)" class="success">Add to Cart</button>
+                        <button id="viewDetails-product3" onclick="viewDetails('product3')">View Details</button>
+                        <button id="addToCart-product3" onclick="addToCart('Desk Organizer Set', 29.99)" class="success">Add to Cart</button>
                     </div>
                 </div>
                 
@@ -411,317 +193,117 @@ src="https://www.facebook.com/tr?id=1455030376180629&ev=PageView&noscript=1"
     </footer>
 
     <script>
-        // Initialize cart and order data
+        // ---------------------------- CORE LOGIC ----------------------------
         let cart = [];
         let currentStep = 1;
         let orderCompleted = false;
-        
-        // Update current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // View product details
-        function viewDetails(productId) {
-            const product = document.getElementById(productId);
-            const productName = product.querySelector('.product-name').textContent;
-            const productDescription = product.querySelector('.product-description').textContent;
-            const productPrice = product.querySelector('.product-price').textContent;
-            
-            alert(`Product Details:\n\n${productName}\n\n${productDescription}\n\n${productPrice}`);
-        }
-        
-        // Add item to cart
-        function addToCart(name, price) {
-            // Check if item already exists in cart
-            const existingItem = cart.find(item => item.name === name);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    name: name,
-                    price: price,
-                    quantity: 1
-                });
+
+        // Step indicator update
+        function updateStepIndicator() {
+            for (let i=1;i<=4;i++){
+                const step = document.getElementById(`step${i}`);
+                step.classList.remove('active','completed');
             }
+            for (let i=1;i<currentStep;i++){
+                document.getElementById(`step${i}`).classList.add('completed');
+            }
+            document.getElementById(`step${currentStep}`).classList.add('active');
+        }
+
+        // View Details
+        function viewDetails(productId){
+            const product = document.getElementById(productId);
+            const name = product.querySelector('.product-name').textContent;
+            const desc = product.querySelector('.product-description').textContent;
+            const price = product.querySelector('.product-price').textContent;
+            alert(`Product Details:\n\n${name}\n\n${desc}\n\n${price}`);
             
+            // META PIXEL EVENT
+            fbq('track','ViewContent',{content_name:name, value:parseFloat(price.replace('$','')), currency:'USD'});
+        }
+
+        // Add to Cart
+        function addToCart(name, price){
+            const existing = cart.find(i=>i.name===name);
+            if(existing) existing.quantity += 1;
+            else cart.push({name, price, quantity:1});
             updateCartDisplay();
             updateStepIndicator();
-            
-            // Show notification
             alert(`Added ${name} to your cart!`);
+            
+            // META PIXEL EVENT
+            fbq('track','AddToCart',{content_name:name, value:price, currency:'USD'});
         }
-        
+
         // Update cart display
-        function updateCartDisplay() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartTotalContainer = document.getElementById('cart-total-container');
-            const emptyCartMessage = document.getElementById('empty-cart-message');
-            
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p id="empty-cart-message">Your cart is empty. Add some products!</p>';
-                cartTotalContainer.classList.add('hidden');
+        function updateCartDisplay(){
+            const container = document.getElementById('cart-items');
+            const totalContainer = document.getElementById('cart-total-container');
+            const empty = document.getElementById('empty-cart-message');
+            if(cart.length===0){
+                container.innerHTML='<p id="empty-cart-message">Your cart is empty. Add some products!</p>';
+                totalContainer.classList.add('hidden');
                 return;
             }
-            
-            // Clear cart display
-            cartItemsContainer.innerHTML = '';
-            
-            // Calculate total
-            let total = 0;
-            
-            // Add each item to the cart display
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <div>
-                        <strong>${item.name}</strong><br>
-                        <small>${item.quantity} × $${item.price.toFixed(2)}</small>
-                    </div>
-                    <div>
-                        $${itemTotal.toFixed(2)}
-                    </div>
-                `;
-                
-                cartItemsContainer.appendChild(cartItem);
+            container.innerHTML='';
+            let total=0;
+            cart.forEach(item=>{
+                const itemTotal=item.price*item.quantity;
+                total+=itemTotal;
+                const div=document.createElement('div');
+                div.className='cart-item';
+                div.innerHTML=`<div><strong>${item.name}</strong><br><small>${item.quantity} × $${item.price.toFixed(2)}</small></div><div>$${itemTotal.toFixed(2)}</div>`;
+                container.appendChild(div);
             });
-            
-            // Update total
-            document.getElementById('cart-total').textContent = total.toFixed(2);
-            
-            // Show cart total container
-            cartTotalContainer.classList.remove('hidden');
-            emptyCartMessage.style.display = 'none';
+            document.getElementById('cart-total').textContent=total.toFixed(2);
+            totalContainer.classList.remove('hidden');
+            empty.style.display='none';
         }
-        
-        // Clear cart
-        function clearCart() {
-            if (cart.length === 0) return;
-            
-            if (confirm("Are you sure you want to clear your cart?")) {
-                cart = [];
-                updateCartDisplay();
-                updateStepIndicator();
-            }
-        }
-        
-        // Proceed to checkout
-        function proceedToCheckout() {
-            if (cart.length === 0) {
-                alert("Your cart is empty. Add some products before checkout.");
-                return;
-            }
-            
-            // Update steps
-            currentStep = 2;
-            updateStepIndicator();
-            
-            // Show checkout form, hide products
+
+        // Clear Cart
+        function clearCart(){ if(cart.length===0) return; if(confirm("Are you sure you want to clear your cart?")){ cart=[]; updateCartDisplay(); updateStepIndicator(); } }
+
+        // Proceed to Checkout
+        function proceedToCheckout(){
+            if(cart.length===0){ alert("Your cart is empty."); return; }
+            currentStep=2; updateStepIndicator();
             document.getElementById('product-section').classList.add('hidden');
             document.getElementById('checkout-section').classList.remove('hidden');
             document.getElementById('confirmation-section').classList.add('hidden');
-            
-            // Update order summary in sidebar
             updateOrderSummary();
+
+            // META PIXEL EVENT
+            const totalValue = cart.reduce((a,b)=>a+b.price*b.quantity,0);
+            fbq('track','InitiateCheckout',{value:totalValue, currency:'USD'});
         }
-        
+
         // Return to products
-        function returnToProducts() {
-            currentStep = 1;
-            updateStepIndicator();
-            
-            // Show products, hide checkout and confirmation
-            document.getElementById('product-section').classList.remove('hidden');
-            document.getElementById('checkout-section').classList.add('hidden');
-            document.getElementById('confirmation-section').classList.add('hidden');
-        }
-        
-        // Proceed to confirmation
-        function proceedToConfirmation() {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            
-            // Basic validation
-            if (!name || !email) {
-                alert("Please fill in all required fields (Name and Email).");
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-            
-            // Update steps
-            currentStep = 3;
-            updateStepIndicator();
-            
-            // Show confirmation, hide checkout form
+        function returnToProducts(){ currentStep=1; updateStepIndicator(); document.getElementById('product-section').classList.remove('hidden'); document.getElementById('checkout-section').classList.add('hidden'); document.getElementById('confirmation-section').classList.add('hidden'); }
+
+        // Proceed to Confirmation
+        function proceedToConfirmation(){
+            const name=document.getElementById('name').value.trim();
+            const email=document.getElementById('email').value.trim();
+            if(!name || !email){ alert("Fill name and email."); return; }
+            if(!isValidEmail(email)){ alert("Enter valid email."); return; }
+            currentStep=3; updateStepIndicator();
             document.getElementById('checkout-section').classList.add('hidden');
             document.getElementById('confirmation-section').classList.remove('hidden');
-            
-            // Generate order ID and update confirmation
-            const orderId = "PC-" + Math.floor(100000 + Math.random() * 900000);
-            document.getElementById('order-id').textContent = orderId;
-            document.getElementById('customer-email').textContent = email;
-            
-            // Update order summary with customer info
-            document.getElementById('summary-name').textContent = name;
-            document.getElementById('summary-email').textContent = email;
+            const orderId="PC-"+Math.floor(100000+Math.random()*900000);
+            document.getElementById('order-id').textContent=orderId;
+            document.getElementById('customer-email').textContent=email;
+            document.getElementById('summary-name').textContent=name;
+            document.getElementById('summary-email').textContent=email;
+
+            // META PIXEL EVENT
+            const totalValue = cart.reduce((a,b)=>a+b.price*b.quantity,0);
+            fbq('track','AddPaymentInfo',{content_name:name, content_email:email, value:totalValue, currency:'USD'});
         }
-        
-        // Complete order
-        function completeOrder() {
-            if (orderCompleted) return;
-            
-            // Update steps
-            currentStep = 4;
-            updateStepIndicator();
-            
-            // Disable complete order button
-            document.getElementById('complete-btn').disabled = true;
-            document.getElementById('complete-btn').textContent = "Order Completed!";
-            
-            // Show success message
-            setTimeout(() => {
-                alert("Thank you for your order!\n\nYour purchase has been confirmed. A receipt has been sent to your email.\n\nThis is a demo site, so no real transaction occurred.");
-                orderCompleted = true;
-            }, 500);
-        }
-        
-        // Update step indicator
-        function updateStepIndicator() {
-            // Reset all steps
-            for (let i = 1; i <= 4; i++) {
-                const stepElement = document.getElementById(`step${i}`);
-                stepElement.classList.remove('active', 'completed');
-            }
-            
-            // Set completed steps
-            for (let i = 1; i < currentStep; i++) {
-                document.getElementById(`step${i}`).classList.add('completed');
-            }
-            
-            // Set active step
-            document.getElementById(`step${currentStep}`).classList.add('active');
-        }
-        
-        // Update order summary in sidebar
-        function updateOrderSummary() {
-            const summaryItems = document.getElementById('summary-items');
-            let total = 0;
-            
-            // Clear summary
-            summaryItems.innerHTML = '';
-            
-            // Add items to summary
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                
-                const summaryItem = document.createElement('div');
-                summaryItem.className = 'cart-item';
-                summaryItem.innerHTML = `
-                    <div>
-                        <strong>${item.name}</strong><br>
-                        <small>${item.quantity} × $${item.price.toFixed(2)}</small>
-                    </div>
-                    <div>
-                        $${itemTotal.toFixed(2)}
-                    </div>
-                `;
-                
-                summaryItems.appendChild(summaryItem);
-            });
-            
-            // Update total
-            document.getElementById('summary-total').textContent = total.toFixed(2);
-            
-            // Show order summary
-            document.getElementById('order-summary').classList.remove('hidden');
-        }
-        
-        // Email validation helper
-        function isValidEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-        
-        // Additional interactive buttons functionality
-        function exploreMore() {
-            alert("Exploring more products! In a real site, this would load additional products or categories.");
-            
-            // Simulate loading new products
-            const exploreBtn = document.getElementById('explore-btn');
-            const originalText = exploreBtn.textContent;
-            exploreBtn.textContent = "Loading more products...";
-            exploreBtn.disabled = true;
-            
-            setTimeout(() => {
-                exploreBtn.textContent = originalText;
-                exploreBtn.disabled = false;
-                alert("New products loaded! Check out our latest arrivals.");
-            }, 1500);
-        }
-        
-        function downloadCatalog() {
-            alert("Downloading catalog...\n\nIn a real site, this would download a PDF catalog.\n\nFor this demo, we'll simulate the download.");
-            
-            // Simulate download progress
-            setTimeout(() => {
-                alert("Catalog downloaded successfully!");
-            }, 1000);
-        }
-        
-        function contactSupport() {
-            const name = prompt("Enter your name for support:");
-            if (name) {
-                alert(`Thank you ${name}! Our support team will contact you shortly.\n\nEmail: support@papercraftdemo.com\nPhone: (555) 123-4567`);
-            }
-        }
-    </script>
 
-
-
-    <script>
-  // -------- VIEW CONTENT ----------
-  document.querySelectorAll("[id^='viewDetails']").forEach(btn => {
-    btn.addEventListener('click', () => {
-      fbq('track', 'ViewContent');
-    });
-  });
-
-  // -------- ADD TO CART ----------
-  document.querySelectorAll("[id^='addToCart']").forEach(btn => {
-    btn.addEventListener('click', () => {
-      fbq('track', 'AddToCart');
-    });
-  });
-
-  // -------- INITIATE CHECKOUT ----------
-  document.getElementById('checkout-btn')?.addEventListener('click', () => {
-    fbq('track', 'InitiateCheckout');
-  });
-
-  // -------- ADD CUSTOMER INFO ----------
-  document.getElementById('proceed-btn')?.addEventListener('click', () => {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    fbq('track', 'AddPaymentInfo', {currency: 'USD', value: cart.reduce((a,b)=>a+b.price*b.quantity,0), content_name: name, content_email: email});
-  });
-
-  // -------- PURCHASE ----------
-  document.getElementById('complete-btn')?.addEventListener('click', () => {
-    fbq('track', 'Purchase', {currency: 'USD', value: cart.reduce((a,b)=>a+b.price*b.quantity,0)});
-  });
-</script>
-
-
-    
-</body>
-</html>
-
-
+        // Complete Order
+        function completeOrder(){
+            if(orderCompleted) return;
+            currentStep=4; updateStepIndicator();
+            document.getElementById('complete-btn').disabled=true;
+            document.getElementById('complete-btn').text
